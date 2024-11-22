@@ -100,10 +100,10 @@ Item {
                 Layout.fillWidth: true
                 Layout.maximumHeight: 30
                 from: 0
-                to: 2550
+                to: 255
                 value: brightness_cool
                 stepSize: 8
-                onValueChanged: set_brightness.exec("echo " + value + " >  /sys/class/backlight/backlight_cool/brightness");
+                onValueChanged: set_brightness.exec("./cool.sh " + value);
 
 
             }
@@ -119,12 +119,12 @@ Item {
                 id: slider_warm
                 Layout.fillWidth: true
                 from: 0
-                to: 2550
+                to: 255
                 value: brightness_warm
                 stepSize: 8
                 onValueChanged: {
                     console.log(value);
-                    set_brightness.exec("echo " + value + " >  /sys/class/backlight/backlight_warm/brightness");
+                    onValueChanged: set_brightness.exec("./warm.sh " + value);
                 }
             }
         }
