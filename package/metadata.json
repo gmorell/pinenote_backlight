@@ -9,7 +9,7 @@
         "Category": "Utilities",
         "Description": "Control PineNote brightness",
         "EnabledByDefault": true,
-        "Icon": "applications-system",
+        "Icon": "high-brightness",
         "Id": "org.neiam.pine64.pinenote_backlight",
         "License": "LGPL-2.1+",
         "Name": "pinenote_backlight",
