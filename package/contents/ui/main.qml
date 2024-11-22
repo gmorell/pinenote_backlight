@@ -88,6 +88,8 @@ Item {
     }
 
     Plasmoid.fullRepresentation: ColumnLayout {
+        Layout.maximumWidth: 200
+
         RowLayout {
             spacing: 2
             Image {
