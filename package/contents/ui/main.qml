@@ -91,19 +91,20 @@ Item {
         RowLayout {
             spacing: 2
             Image {
+                Layout.fillWidth: true
                 Layout.maximumHeight: 30
+                Layout.maximumWidth: 50
                 fillMode: Image.PreserveAspectFit
                 source: "../images/sun.svg"
             }
             PlasmaComponents3.Slider {
                 id: slider_cool
                 Layout.fillWidth: true
-                Layout.maximumHeight: 30
                 from: 0
                 to: 255
                 value: brightness_cool
                 stepSize: 8
-                onValueChanged: set_brightness.exec("../cool.sh " + value);
+                onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_cool/brightness'");
 
 
             }
@@ -112,6 +113,7 @@ Item {
             Image {
                 Layout.fillWidth: true
                 Layout.maximumHeight: 30
+                Layout.maximumWidth: 50
                 fillMode: Image.PreserveAspectFit
                 source: "../images/moon.svg"
             }
@@ -124,7 +126,7 @@ Item {
                 stepSize: 8
                 onValueChanged: {
                     console.log(value);
-                    onValueChanged: set_brightness.exec("../warm.sh " + value);
+                    onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_warm/brightness'");
                 }
             }
         }
