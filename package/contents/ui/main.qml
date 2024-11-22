@@ -103,7 +103,7 @@ Item {
                 to: 255
                 value: brightness_cool
                 stepSize: 8
-                onValueChanged: set_brightness.exec("./cool.sh " + value);
+                onValueChanged: set_brightness.exec("../cool.sh " + value);
 
 
             }
@@ -124,7 +124,7 @@ Item {
                 stepSize: 8
                 onValueChanged: {
                     console.log(value);
-                    onValueChanged: set_brightness.exec("./warm.sh " + value);
+                    onValueChanged: set_brightness.exec("../warm.sh " + value);
                 }
             }
         }
