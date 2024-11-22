@@ -62,8 +62,6 @@ Item {
 			var exitStatus = data["exit status"]
 			var stdout = data["stdout"]
 			var stderr = data["stderr"]
-			console.log(stdout)
-            console.log(stderr)
 			exited(exitCode, exitStatus, stdout, stderr)
 			disconnectSource(sourceName) // cmd finished
 		}
@@ -106,7 +104,7 @@ Item {
                 to: 255
                 value: brightness_cool
                 stepSize: 8
-                onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_cool/brightness'");
+                onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_cool/brightness'")
 
 
             }
@@ -126,10 +124,8 @@ Item {
                 to: 255
                 value: brightness_warm
                 stepSize: 8
-                onValueChanged: {
-                    console.log(value);
-                    onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_warm/brightness'");
-                }
+                onValueChanged: set_brightness.exec("bash -c 'echo " + value + " > /sys/class/backlight/backlight_warm/brightness'")
+
             }
         }
     }
