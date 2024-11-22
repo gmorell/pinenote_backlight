@@ -89,8 +89,8 @@ Item {
 
     Plasmoid.fullRepresentation: ColumnLayout {
         RowLayout {
+            spacing: 2
             Image {
-                Layout.fillWidth: true
                 Layout.maximumHeight: 30
                 fillMode: Image.PreserveAspectFit
                 source: "../images/sun.svg"
