@@ -103,10 +103,8 @@ Item {
                 to: 2550
                 value: brightness_cool
                 stepSize: 8
-                onValueChanged: {
-                    console.log(value);
-                    set_brightness.exec("echo " + value + " >  /sys/class/backlight/backlight_cool/brightness");
-                }
+                onValueChanged: set_brightness.exec("echo " + value + " >  /sys/class/backlight/backlight_cool/brightness");
+
 
             }
         }
