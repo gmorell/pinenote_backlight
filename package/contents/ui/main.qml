@@ -82,15 +82,9 @@ Item {
 	Timer {
         interval: 500; running: true; repeat: true
         onTriggered: {
-            var cmd = 'cat /sys/class/backlight/intel_backlight/brightness'
-            executable_cool.exec(cmd)
-            executable_warm.exec(cmd)
+            executable_cool.exec(cmd_cool)
+            executable_warm.exec(cmd_warm)
         }
-    }
-
-    function prependText(val) {
-        // set_brightness.exec(value)
-        return "Brightness: " + val;
     }
 
     Plasmoid.fullRepresentation: ColumnLayout {
